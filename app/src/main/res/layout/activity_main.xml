@@ -22,6 +22,7 @@
 
         <com.flyco.tablayout.CommonTabLayout
             android:id="@+id/tablayout"
+            android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="54dp"
             android:background="@color/main_color"

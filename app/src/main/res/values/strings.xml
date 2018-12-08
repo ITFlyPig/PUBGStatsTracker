@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PUBG Guide</string>
+    <string name="app_name">Stats Tracker</string>
     <string name="query">点此查询绝地求生战绩</string>
     <string name="please_input">请输入您的角色ID</string>
     <string name="region">服务器</string>
