@@ -1,13 +1,14 @@
 package com.statstracker.forpubggame.base;
 
 import android.app.Application;
+import android.support.multidex.MultiDexApplication;
 
 import com.google.android.gms.ads.MobileAds;
 import com.lzy.okgo.OkGo;
 import com.statstracker.forpubggame.R;
 import com.umeng.analytics.MobclickAgent;
 
-public class PubgApplication extends Application {
+public class PubgApplication extends MultiDexApplication {
 
     private static PubgApplication mInstance;
 

@@ -10,6 +10,8 @@ android {
         versionName rootProject.ext.android["versionName"]
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         flavorDimensions "versionCode"
+        multiDexEnabled true
+
     }
     buildTypes {
         release {
@@ -30,6 +32,12 @@ android {
         googlePaly{
             manifestPlaceholders = [UMENG_CHANNEL_VALUE: "googlePaly"]
         }
+    }
+
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
@@ -57,6 +65,8 @@ dependencies {
     implementation 'com.google.android.gms:play-services:11.0.1'
     implementation 'com.google.android.gms:play-services-ads:11.0.1'
     implementation 'com.google.firebase:firebase-ads:11.0.1'
+
+    implementation 'com.android.support:multidex:1.0.3'
 }
 
 
