@@ -54,7 +54,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
-                    android:text="@string/region"
+                    android:text="@string/server"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size" />
 
@@ -118,7 +118,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="吃鸡数"
+                    android:text="@string/wins"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -148,7 +148,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="吃鸡率"
+                    android:text="@string/win_lv"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -178,7 +178,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="前10数"
+                    android:text="@string/top_10"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -208,7 +208,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="最大击杀数"
+                    android:text="@string/most_kills"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -238,7 +238,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="最远距离击杀"
+                    android:text="@string/most_kills"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -268,7 +268,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="爆头率"
+                    android:text="@string/headshot"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
@@ -298,7 +298,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="平均生存时间"
+                    android:text="@string/avg_time"
                     android:textSize="@dimen/text_size" />
 
                 <TextView
