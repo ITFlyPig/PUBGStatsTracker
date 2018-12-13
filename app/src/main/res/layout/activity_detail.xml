@@ -50,7 +50,7 @@
                 android:paddingTop="15dp">
 
                 <TextView
-                    android:id="@+id/tv_title"
+                    android:id="@+id/tv_region_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
@@ -85,6 +85,7 @@
                 android:paddingTop="15dp">
 
                 <TextView
+                    android:id="@+id/tv_mode_left"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingLeft="15dp"
@@ -238,7 +239,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="15dp"
-                    android:text="@string/most_kills"
+                    android:text="@string/longest_kill"
                     android:textSize="@dimen/text_size" />
 
                 <TextView

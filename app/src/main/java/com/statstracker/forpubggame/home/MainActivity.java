@@ -15,6 +15,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.statstracker.forpubggame.R;
+import com.umeng.analytics.MobclickAgent;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
 
             }
         });
+        MobclickAgent.setDebugMode(true);
     }
 
 
@@ -136,4 +138,15 @@ public class MainActivity extends AppCompatActivity implements MainContract.View
     }
 
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        MobclickAgent.onResume(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        MobclickAgent.onPause(this);
+    }
 }

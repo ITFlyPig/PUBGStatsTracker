@@ -24,8 +24,6 @@ import butterknife.ButterKnife;
 import cn.carbswang.android.numberpickerview.library.NumberPickerView;
 
 public class DetailActivity extends AppCompatActivity implements DetailContract.View, View.OnClickListener {
-    @BindView(R.id.tv_title)
-    TextView tvTitle;
     @BindView(R.id.tv_region_middle_title)
     TextView tvRegionMiddleTitle;
     @BindView(R.id.iv_region_right)
@@ -68,6 +66,10 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     TextView titletext;
     @BindView(R.id.titlebar)
     RelativeLayout titlebar;
+    @BindView(R.id.tv_region_left)
+    TextView tvRegionLeft;
+    @BindView(R.id.tv_mode_left)
+    TextView tvModeLeft;
 
 
     private DetailContract.Presenter mPresenter;
@@ -153,9 +155,9 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
 
             top10.setText("0");
             maxkill.setText("0");
-            longestKill.setText("0 minute");
+            longestKill.setText("0 meter");
             headshotKills.setText("0%");
-            timeSurvivedAvg.setText("0 meter");
+            timeSurvivedAvg.setText("0 minute");
             kd.setText("0");
         } else {
             wins.setText(String.valueOf((int) paiwei.wins));
@@ -173,7 +175,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
 
             top10.setText(String.valueOf(paiwei.top10s));
             maxkill.setText(String.valueOf(paiwei.maxKillStreaks));
-            longestKill.setText(df.format(paiwei.longestKill) + " minute");
+            longestKill.setText(df.format(paiwei.longestKill) + " meter");
 
             float killsl = 0;
             if (paiwei.kills != 0) {
@@ -192,7 +194,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
                 survivedAvg = paiwei.timeSurvived / (60 * paiwei.roundsPlayed);
 
             }
-            timeSurvivedAvg.setText(df.format(survivedAvg) + " meter");
+            timeSurvivedAvg.setText(df.format(survivedAvg) + " minute");
 
             String kdStr = "";
             if (paiwei.roundsPlayed == 0) {
@@ -246,12 +248,15 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
                     mSelectRegionIndex = picker.getPickedIndexRelativeToRaw();
                     if (mSelectRegionIndex >= 0 && mSelectRegionIndex < mRegionArray.length) {
                         mRegion = mRegionArray[mSelectRegionIndex];
+                        tvRegionLeft.setText(mRegionNamesArray[mSelectRegionIndex]);
                     }
+
 
                 } else {
                     mSelectModeIndex = picker.getPickedIndexRelativeToRaw();
                     if (mSelectModeIndex >= 0 && mSelectModeIndex < mModeArray.length) {
                         mMode = mModeArray[mSelectModeIndex];
+                        tvModeLeft.setText(mModeNameArray[mSelectModeIndex]);
                     }
 
                 }

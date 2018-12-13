@@ -17,8 +17,10 @@ public class PubgApplication extends MultiDexApplication {
         super.onCreate();
         mInstance = this;
         initNetwork();
-        MobclickAgent.startWithConfigure(new MobclickAgent.UMAnalyticsConfig(this, getString(R.string.umeng_key), "google", MobclickAgent.EScenarioType.E_UM_NORMAL, true));
+        MobclickAgent.startWithConfigure(new MobclickAgent.UMAnalyticsConfig(this, getString(R.string.umeng_key), "release", MobclickAgent.EScenarioType.E_UM_NORMAL, true));
         MobileAds.initialize(this);
+
+        MobclickAgent.setDebugMode(true);
 
     }
 
