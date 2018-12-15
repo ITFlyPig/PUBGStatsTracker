@@ -82,7 +82,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     private String[] mRegionNamesArray = new String[]{"Asia", "Europe", "Japan", "Kakao", "Korea", "North America", "Oceania"
             , "Russia", "South and Central America", "South East Asia", "Tournaments"};
     private String[] mModeArray = new String[]{"solo", "squad", "duo"};
-    private String[] mModeNameArray = new String[]{"单排", "双排", "多排"};
+    private String[] mModeNameArray;
     private int mSelectRegionIndex = -1;
     private int mSelectModeIndex = -1;
     private boolean isRegion = false;
@@ -107,6 +107,8 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
         llPick.setOnClickListener(this);
         ivLeftIcon.setOnClickListener(this);
         titletext.setOnClickListener(this);
+
+        mModeNameArray = new String[]{getResources().getString(R.string.solo), getResources().getString(R.string.duo), getResources().getString(R.string.squad)};
     }
 
 
@@ -134,7 +136,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     @Override
     public void onLoadSucess(SeasonDetail seasonDetail) {
         dismissLoading();
-        ToastUtil.showToas("网络请求成功");
+        ToastUtil.showToas(getResources().getString(R.string.network_success));
         if (seasonDetail != null) {
             if (TextUtils.equals(mModeArray[0], mMode)) {
                 updateUi(seasonDetail.solo);
@@ -226,7 +228,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
 
         Thread.dumpStack();
         dismissLoading();
-        ToastUtil.showToas("网络请求错误");
+        ToastUtil.showToas(getResources().getString(R.string.network_error));
     }
 
     @Override
@@ -248,7 +250,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
                     mSelectRegionIndex = picker.getPickedIndexRelativeToRaw();
                     if (mSelectRegionIndex >= 0 && mSelectRegionIndex < mRegionArray.length) {
                         mRegion = mRegionArray[mSelectRegionIndex];
-                        tvRegionLeft.setText(mRegionNamesArray[mSelectRegionIndex]);
+                        tvRegionMiddleTitle.setText(mRegionNamesArray[mSelectRegionIndex]);
                     }
 
 
@@ -256,7 +258,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
                     mSelectModeIndex = picker.getPickedIndexRelativeToRaw();
                     if (mSelectModeIndex >= 0 && mSelectModeIndex < mModeArray.length) {
                         mMode = mModeArray[mSelectModeIndex];
-                        tvModeLeft.setText(mModeNameArray[mSelectModeIndex]);
+                        tvModeMiddleTitle.setText(mModeNameArray[mSelectModeIndex]);
                     }
 
                 }

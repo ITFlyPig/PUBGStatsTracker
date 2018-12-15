@@ -68,7 +68,7 @@ public class StandingsFragment extends Fragment implements View.OnClickListener 
             case R.id.tv_query:
                 String playerName = etInput.getText().toString();
                 if (TextUtils.isEmpty(playerName)) {
-                    ToastUtil.showToas("角色名称不能为空");
+                    ToastUtil.showToas(getResources().getString(R.string.input_not_empty));
                     return;
                 }
 
